@@ -1,0 +1,16 @@
+<div class="section-banner-hotword--no-skin" style="opacity: 1">
+  <div class="full-home-banners-wrapper">
+    <section id="HomePageCarouselBannerSection">
+      <div class="container">
+        <app-carousel-wrapper></app-carousel-wrapper>
+      </div>
+    </section>
+    <div class="quick-access-menu">
+      <a *ngFor="let hotword in hotwords" [href]="hotword.url">
+        <div class="quick-access-menu__item-wrapper" style="width: 150px">
+
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

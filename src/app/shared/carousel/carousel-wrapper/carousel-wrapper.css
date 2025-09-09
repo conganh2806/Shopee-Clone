@@ -1,0 +1,29 @@
+
+.home-page-carousel-wrapper {
+    display: flex;
+    line-height: 0;
+    max-height: 235px;
+    min-height: 235px;
+}
+
+.main-carousel {
+    border-radius: .125rem;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05);
+    flex-basis: 0;
+    flex-grow: 2;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.mini-carousel {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    display: flex;
+    flex-basis: 0;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-left: .3125rem;
+}

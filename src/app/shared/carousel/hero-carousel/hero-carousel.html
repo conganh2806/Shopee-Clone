@@ -1,0 +1,19 @@
+<div class="stardust-carousel">
+    <div class="stardust-carousel__item-list-wrapper" style="padding-top: 29.5003%">
+        <ul class="stardust-carousel__item-list" 
+            [ngStyle]="{
+                'width': getTotalWidth() + '%',
+                'transition': 'transform 0.5s ease',
+                'transform': getTransformStyle()
+            }"
+        >
+            <li class="stardust-carousel__item" *ngFor="let item of images; trackBy: trackByIndex" [style.width.%]="getItemWidth()">
+                <div class="stardust-carousel__item-inner-wrapper">
+                    <a class="stardust-carousel__item-inner-wrapper-image-wrapper relative" href="#">
+                        <img class="pt-0 align-bottom object-bottom h-full w-full bg-bottom absolute" style="object-fit: cover;" [src]="item.src" [alt]="item.alt" />
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
