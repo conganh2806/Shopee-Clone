@@ -1,0 +1,24 @@
+.section-banner-hotword--no-skin {
+    background-color: #fff;
+    border-radius: .125rem;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05);
+    margin-top: 0;
+    overflow: visible;
+    padding-top: 30px;
+}
+
+.quick-access-menu {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto 0;
+    min-height: 108px;
+    width: 1200px;
+}
+
+.quick-access-menu__item-wrapper {
+    margin: 18px auto 8px;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+}
