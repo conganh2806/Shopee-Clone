@@ -1,0 +1,6 @@
+<div class="quick-access-menu">
+  @for (hotword of hotwords; track hotword) {
+    <app-hotword-item [url]="hotword.url" [imageSrc]="hotword.imageSrc" [text]="hotword.text">
+    </app-hotword-item>
+  }
+</div>

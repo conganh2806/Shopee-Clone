@@ -1,0 +1,24 @@
+
+.quick-access-menu__item-wrapper {
+    margin: 18px auto 8px;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+}
+
+.quick-access-menu__item-text {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: .8125rem;
+    line-height: .875rem;
+    margin-bottom: 8px;
+    max-width: 150px;
+    word-wrap: break-word;
+    overflow: hidden;
+    white-space: pre-line;
+    color: #222;
+    letter-spacing: 0;
+    text-align: center;
+}
