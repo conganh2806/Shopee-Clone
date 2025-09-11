@@ -1,0 +1,22 @@
+<a [href]="url">
+  <div style="width: 150px">
+    <div class="quick-access-menu__item-wrapper">
+      <div class="mt-5 mb-2 mr-auto ml-auto h-11 w-11" style="border-radius: 50%">
+        <div class="relative rounded-none h-full">
+          <div
+            class="opacity-[1] h-full"
+            [ngStyle]="{ 'background-image': 'url(' + imageSrc + ')' }"
+            style="
+              transition: opacity 0.2s ease;
+              background-size: contain;
+              background-repeat: no-repeat;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="quick-access-menu__item-text">
+      {{ text }}
+    </div>
+  </div>
+</a>
