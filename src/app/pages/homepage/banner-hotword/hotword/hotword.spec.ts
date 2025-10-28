@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BannerHotword } from './banner-hotword';
+import { Hotword } from './hotword.component';
 
-describe('BannerHotword', () => {
-  let component: BannerHotword;
-  let fixture: ComponentFixture<BannerHotword>;
+describe('Hotword', () => {
+  let component: Hotword;
+  let fixture: ComponentFixture<Hotword>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BannerHotword]
-    })
-    .compileComponents();
+      imports: [Hotword],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(BannerHotword);
+    fixture = TestBed.createComponent(Hotword);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

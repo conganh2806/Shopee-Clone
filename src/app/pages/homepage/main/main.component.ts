@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-homepage-main',
+  standalone: true,
   imports: [],
   templateUrl: './main.html',
-  styleUrl: './main.css'
+  styleUrl: './main.css',
 })
-export class Main {
-
-}
+export class Main {}
