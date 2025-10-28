@@ -1,5 +1,7 @@
-<a *ngFor="let banner of banners" [href]="banner.link" class="banner-image__link object-cover last:mt-1!">
-    <div class="w-full h-full">
-        <img class="w-full object-contain" [src]="banner.imgSrc" [alt]="banner.alt">
-    </div>
+@for(banner of banners; track banner) {
+<a [href]="banner.link" class="banner-image__link object-cover last:mt-1!">
+  <div class="w-full h-full">
+    <img class="w-full object-contain" [src]="banner.imgSrc" [alt]="banner.alt" />
+  </div>
 </a>
+}

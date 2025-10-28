@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroCarousel } from './hero-carousel';
+import { HeroCarousel } from './hero-carousel.component';
 
 describe('HeroCarousel', () => {
   let component: HeroCarousel;
@@ -8,9 +8,8 @@ describe('HeroCarousel', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeroCarousel]
-    })
-    .compileComponents();
+      imports: [HeroCarousel],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HeroCarousel);
     component = fixture.componentInstance;
