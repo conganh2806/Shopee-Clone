@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { BannerHotword } from './banner-hotword/banner-hotword.component';
-import { Main } from './main/main.component';
+import { BannerHotword } from '@pages/homepage/banner-hotword/banner-hotword.component';
+import { Main } from '@pages/homepage/main/main.component';
 
 @Component({
   selector: 'app-homepage',
