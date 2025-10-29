@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarouselWrapper } from '../../../shared/carousel/carousel-wrapper/carousel-wrapper.component';
+import { CarouselWrapper } from '@shared/carousel/carousel-wrapper/carousel-wrapper.component';
 import { Hotword } from './hotword/hotword.component';
 
 @Component({

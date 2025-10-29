@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HotwordItem } from './hotword-item/hotword-item.component';
+import { HotwordItem } from '@pages/homepage/banner-hotword/hotword/hotword-item/hotword-item.component';
 
 @Component({
   selector: 'app-hotword',
