@@ -1,0 +1,18 @@
+<div class="image-carousel__item-list-wrapper">
+  <ul class="image-carousel__item-list" [style.transform]="carouselTransform()">
+    @for(item of categoryItems(); track item.src) {
+    <li class="image-carousel__item">
+      <image-carousel-item [categoryItem]="item"></image-carousel-item>
+    </li>
+    } @empty {
+    <li style="width: 100%; text-align: center">Không có danh mục nào.</li>
+    }
+  </ul>
+  @if (canGoPrev()) {
+  <app-carousel-nav-button class="prev-button" direction="left" (navigate)="goToPrevPage()">
+  </app-carousel-nav-button>
+  } @if (canGoNext()) {
+  <app-carousel-nav-button class="next-button" direction="right" (navigate)="goToNextPage()">
+  </app-carousel-nav-button>
+  }
+</div>

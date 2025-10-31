@@ -1,15 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { Header } from '@core/header/header.component';
-import { Homepage } from '@pages/homepage/homepage.component';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Header, RouterOutlet],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('shopee-clone');
-}
+export class AppComponent {}

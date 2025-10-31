@@ -1,0 +1,12 @@
+@if(categoryItem) {
+<a href="" class="image-carousel-item__category-grid">
+  <div class="image-carousel-item__category-grid-wrapper">
+    <div class="image-carousel__wrapper">
+      <img [src]="categoryItem.src" [alt]="categoryItem.text" />
+    </div>
+    <div class="text-carousel__wrapper">
+      {{ categoryItem.text }}
+    </div>
+  </div>
+</a>
+}
