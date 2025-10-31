@@ -14,7 +14,7 @@ export class CategoryService extends CategoryItemData {
 
   private dataUrl = 'assets/data/category-items.json';
 
-  getCategoryItem(): Observable<CategoryItem[]> {
+  getCategoryItems(): Observable<CategoryItem[]> {
     return this.http.get<CategoryItem[]>(this.dataUrl);
   }
 }

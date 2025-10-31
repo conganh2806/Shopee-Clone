@@ -5,6 +5,7 @@ import { ImageCarouselItem } from '@pages/homepage/category-list/category-list-s
 import { CarouselNavButton } from '@app/shared/components/carousel-nav-button/carousel-nav-button.component';
 import { CategoryService } from '@app/core/services/category.service';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { CategoryItemData } from '@app/core/data/category.data';
 
 @Component({
   selector: 'image-carousel',
@@ -17,11 +18,12 @@ export class ImageCarousel {
   private readonly ITEMS_PER_COLUMN = 2;
   private readonly VISIBLE_COLUMNS = 10;
 
-  private categoryService = inject(CategoryService);
+  private categoryService = inject(CategoryItemData);
 
-  categoryItems = toSignal(this.categoryService.getCategoryItem(), {
-    initialValue: [],
-  });
+  categoryItems = toSignal(
+    this.categoryService.getCategoryItems(), // <--- Gọi service
+    { initialValue: [] } // Cung cấp giá trị ban đầu (rất quan trọng)
+  );
 
   constructor() {
     effect(() => {
