@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { BannerHotword } from '@pages/homepage/banner-hotword/banner-hotword.component';
-import { Main } from '@pages/homepage/main/main.component';
+import { MainComponent } from '@pages/homepage/main/main.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [BannerHotword, Main],
+  imports: [BannerHotword, MainComponent],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css',
 })
-export class Homepage {}
+export class HomepageComponent {}
