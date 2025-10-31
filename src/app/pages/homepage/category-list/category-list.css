@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  background-color: #fff;
+  margin-top: 1.25rem;
+  min-height: 18.875rem;
+}
+
+.category-list__wrapper {
+  padding-top: 0;
+}

@@ -1,10 +1,6 @@
 import { Component, OnInit, OnDestroy, signal, computed, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-interface CarouselImage {
-  src: string;
-  alt: string;
-}
+import { CarouselImage } from '@app/core/models/carousel-image.model';
 
 @Component({
   selector: 'app-hero-carousel',
@@ -20,6 +16,8 @@ export class HeroCarousel implements OnInit, OnDestroy {
     { src: 'images/carousel/hero/vn-11134258-7ras8-mdq0iifj5f3g73_xxhdpi.jpg', alt: 'Image 3' },
     { src: 'images/carousel/hero/sg-11134258-7rene-mdu1o2ntxktgee_xxhdpi.png', alt: 'Image 4' },
   ]);
+
+  private readonly AUTO_PLAY_INTERVAL = 3000;
 
   currentIndex = signal(0);
 
@@ -64,7 +62,7 @@ export class HeroCarousel implements OnInit, OnDestroy {
   startAutoPlay() {
     this.autoPlayInterval = setInterval(() => {
       this.nextSlide();
-    }, 3000);
+    }, this.AUTO_PLAY_INTERVAL);
   }
 
   stopAutoPlay() {

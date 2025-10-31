@@ -1,0 +1,9 @@
+<button
+  class="carousel-nav-button"
+  type="button"
+  [disabled]="disabled"
+  (click)="onClick()"
+  [attr.aria-label]="direction === 'right' ? 'Next' : 'Previous'"
+>
+  <fa-icon [icon]="arrowIcon"></fa-icon>
+</button>

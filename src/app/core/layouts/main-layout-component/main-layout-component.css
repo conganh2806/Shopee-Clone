@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.home-wrapper.home-wrapper-transition {
+  margin-top: 7.4375rem;
+}
+
+.home-wrapper-transition {
+  transition: margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-overflow-scrolling: touch;
+}
