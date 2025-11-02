@@ -1,0 +1,62 @@
+.stardust-tabs-header-wrapper {
+  position: sticky;
+  margin-top: 7.735rem;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.stardust-tabs-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stardust-tabs-header__tab {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: flex;
+  user-select: none;
+}
+
+.stardust-tabs-header__tab--active {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 3.75rem;
+  padding: 0.9375rem 2.875rem;
+  position: relative;
+}
+
+.stardust-tabs-header__tab--active {
+  color: #ee4d2d;
+}
+
+.stardust-tabs-header__border-bottom {
+  opacity: 1;
+  background-color: #ee4d2d;
+  bottom: 0;
+  content: '';
+  height: 0.25rem;
+  left: 0;
+  position: absolute;
+  transition: opacity 0.3s;
+  width: 100%;
+}
+
+.stardust-tabs-header__title {
+  align-items: center;
+  color: #ee4d2d;
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

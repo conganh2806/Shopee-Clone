@@ -1,0 +1,8 @@
+:host {
+  position: relative;
+  z-index: 0;
+}
+
+.header-panels__wrapper {
+  margin-top: -5.5rem;
+}
