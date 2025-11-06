@@ -1,0 +1,20 @@
+<div class="text-input__wrapper">
+  <div class="text-input__container">
+    <input
+      class="text-input__input"
+      [type]="type"
+      [placeholder]="placeholder"
+      [autocomplete]="autocomplete"
+      [formControl]="control"
+    />
+    @if(showCheckmark()) {
+    <div class="text-input__checkmark">
+      <fa-icon [icon]="faCircleCheck"></fa-icon>
+    </div>
+    }
+  </div>
+
+  <div class="authentication-input-error__text">
+    {{ errorMessage }}
+  </div>
+</div>

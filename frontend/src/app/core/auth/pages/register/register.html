@@ -1,0 +1,63 @@
+<div class="register__content">
+  <div class="register__section">
+    <div class="register__section-left"></div>
+    <div class="register__section-right">
+      <div class="register__title-wrapper">
+        <div class="register__title">
+          <div class="register__title-text">Đăng ký</div>
+        </div>
+      </div>
+      <div class="register__form-wrapper">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          @switch (currentStep()) { @case ('phone') {
+          <app-text-input
+            [control]="phone!"
+            [errorMessage]="phoneErrorMessage()"
+            type="tel"
+            placeholder="Số điện thoại"
+            autocomplete="tel"
+            [showValidationSuccess]="true"
+          ></app-text-input>
+          <button type="submit" class="register__submit-button" [disabled]="phone.invalid">
+            Tiếp theo
+          </button>
+          } @case ('password') {
+          <app-text-input [control]="phone!" type="tel"></app-text-input>
+          <app-text-input
+            [control]="password!"
+            [errorMessage]="passwordErrorMessage()"
+            type="password"
+            placeholder="Mật khẩu"
+          ></app-text-input>
+
+          <app-text-input
+            [control]="confirmPassword!"
+            [errorMessage]="confirmPasswordErrorMessage()"
+            type="password"
+            placeholder="Xác nhận mật khẩu"
+          ></app-text-input>
+
+          <button type="submit" class="register__submit-button" [disabled]="registerForm.invalid">
+            Đăng ký
+          </button>
+
+          } @case ('success') {
+          <div class="register__success-message">
+            Đăng ký thành công!
+            <p>Đang chuyển hướng bạn...</p>
+          </div>
+          } }
+        </form>
+      </div>
+
+      @if (currentStep() !== 'success') {
+      <div class="register__account-available">
+        <div class="account-available__wrapper">
+          Bạn đã có tài khoản?
+          <a class="account-available__text" href=""> Đăng nhập </a>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
