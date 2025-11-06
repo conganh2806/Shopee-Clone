@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { HomepageComponent } from '@pages/homepage/homepage.component';
-import { MainLayoutComponent } from '@app/core/layouts/main-layout-component/main-layout-component.component';
-import { AuthLayoutComponent } from '@app/core/layouts/auth-layout/auth-layout.component';
+import { HomepageComponent } from '@features/homepage/homepage';
+import { MainLayoutComponent } from '@app/core/layouts/main-layout-component/main-layout-component';
+import { AuthLayoutComponent } from '@app/core/layouts/auth-layout/auth-layout';
 
 export const routeConfig: Routes = [
   {

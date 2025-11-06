@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HeroCarousel } from '@shared/carousel/hero-carousel/hero-carousel.component';
-import { MiniCarousel } from '@shared/carousel/mini-carousel/mini-carousel.component';
+import { HeroCarousel } from '@app/shared/carousel/hero-carousel/hero-carousel';
+import { MiniCarousel } from '@app/shared/carousel/mini-carousel/mini-carousel';
 
 @Component({
   selector: 'app-carousel-wrapper',
