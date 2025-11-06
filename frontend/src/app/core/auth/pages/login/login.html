@@ -1,0 +1,54 @@
+<div class="register__content">
+  <div class="register__section">
+    <div class="register__section-left"></div>
+    <div class="register__section-right">
+      <div class="register__title-wrapper">
+        <div class="register__title">
+          <div class="register__title-text">Đăng Nhập</div>
+        </div>
+      </div>
+      <div class="register__form-wrapper">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <app-text-input
+            [control]="phone!"
+            [errorMessage]="phoneErrorMessage()"
+            type="tel"
+            placeholder="Số điện thoại"
+            autocomplete="tel"
+          ></app-text-input>
+
+          <app-text-input
+            [control]="password!"
+            [errorMessage]="passwordErrorMessage()"
+            type="password"
+            placeholder="Mật khẩu"
+          ></app-text-input>
+
+          @if (apiError()) {
+          <div
+            class="authentication-input-error__text"
+            style="min-height: 1rem; padding-bottom: 10px"
+          >
+            {{ apiError() }}
+          </div>
+          }
+
+          <button
+            type="submit"
+            class="register__submit-button"
+            [disabled]="loginForm.invalid || loading()"
+          >
+            {{ loading() ? 'Đang xử lý...' : 'Đăng Nhập' }}
+          </button>
+        </form>
+      </div>
+
+      <div class="register__account-available">
+        <div class="account-available__wrapper">
+          Bạn đã có tài khoản?
+          <a class="account-available__text" href=""> Đăng nhập </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
