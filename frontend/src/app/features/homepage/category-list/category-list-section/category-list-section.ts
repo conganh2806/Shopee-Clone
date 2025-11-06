@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImageCarousel } from '@pages/homepage/category-list/category-list-section/image-carousel/image-carousel.component';
+import { ImageCarousel } from '@features/homepage/category-list/category-list-section/image-carousel/image-carousel';
 
 @Component({
   selector: 'category-list-section',

@@ -1,9 +1,7 @@
 import { Component, signal, computed, WritableSignal, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CategoryItem } from '@app/core/models/category-item';
-import { ImageCarouselItem } from '@pages/homepage/category-list/category-list-section/image-carousel-item/image-carousel-item.component';
-import { CarouselNavButton } from '@app/shared/components/carousel-nav-button/carousel-nav-button.component';
-import { CategoryService } from '@app/core/services/category.service';
+import { ImageCarouselItem } from '@features/homepage/category-list/category-list-section/image-carousel-item/image-carousel-item';
+import { CarouselNavButton } from '@app/shared/components/carousel-nav-button/carousel-nav-button';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CategoryItemData } from '@app/core/data/category.data';
 

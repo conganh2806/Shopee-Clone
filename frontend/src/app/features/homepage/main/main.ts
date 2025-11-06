@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CategoryList } from '@pages/homepage/category-list/category-list.component';
+import { CategoryList } from '@features/homepage/category-list/category-list';
 
 @Component({
   selector: 'app-homepage-main',

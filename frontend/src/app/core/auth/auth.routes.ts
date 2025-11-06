@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { publicGuard } from './auth-guard';
 
-import { RegisterComponent } from '@app/core/auth/pages/register/register.component';
-import { LoginComponent } from '@app/core/auth/pages/login/login.component';
+import { RegisterComponent } from '@app/core/auth/pages/register/register';
+import { LoginComponent } from '@app/core/auth/pages/login/login';
 
 export const AUTH_ROUTES: Routes = [
   {

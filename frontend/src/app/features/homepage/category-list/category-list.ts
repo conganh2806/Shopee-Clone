@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CategoryListHeader } from '@app/pages/homepage/category-list/category-list-header/category-list-header.component';
-import { CategoryListSection } from '@app/pages/homepage/category-list/category-list-section/category-list-section.component';
+import { CategoryListHeader } from '@features/homepage/category-list/category-list-header/category-list-header';
+import { CategoryListSection } from '@features/homepage/category-list/category-list-section/category-list-section';
 
 @Component({
   selector: 'home-category-list',

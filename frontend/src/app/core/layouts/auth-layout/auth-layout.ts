@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Header } from '@core/layouts/auth-layout/header/header.component';
+import { Header } from '@app/core/layouts/auth-layout/header/header';
 
 @Component({
   selector: 'app-auth-layout',
