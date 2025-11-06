@@ -1,0 +1,17 @@
+@if(config()) {
+<div class="dialog-backdrop" (click)="onCancel()">
+  <div class="dialog-content" (click)="$event.stopPropagation()">
+    <h2 class="dialog-title">{{ config()?.title }}</h2>
+
+    <p class="dialog-message">{{ config()?.message }}</p>
+
+    <div class="dialog-actions">
+      @for (button of config()?.buttons; track button.value) {
+      <button (click)="onButtonClick(button.value)" [class]="button.style || 'secondary'">
+        {{ button.text }}
+      </button>
+      }
+    </div>
+  </div>
+</div>
+}
