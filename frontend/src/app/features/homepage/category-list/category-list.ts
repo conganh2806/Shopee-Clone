@@ -7,6 +7,6 @@ import { CategoryListSection } from '@features/homepage/category-list/category-l
   standalone: true,
   imports: [CategoryListHeader, CategoryListSection],
   templateUrl: './category-list.html',
-  styleUrl: './category-list.css',
+  styleUrl: './category-list.scss',
 })
 export class CategoryList {}

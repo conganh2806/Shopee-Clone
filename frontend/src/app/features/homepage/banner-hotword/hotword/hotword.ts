@@ -7,7 +7,7 @@ import { HotwordItem } from '@features/homepage/banner-hotword/hotword/hotword-i
   standalone: true,
   imports: [CommonModule, HotwordItem],
   templateUrl: './hotword.html',
-  styleUrl: './hotword.css',
+  styleUrl: './hotword.scss',
 })
 export class Hotword {
   hotwords = [

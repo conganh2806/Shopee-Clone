@@ -6,7 +6,7 @@ import { CategoryItem } from '@app/core/models/category-item';
   standalone: true,
   imports: [],
   templateUrl: './image-carousel-item.html',
-  styleUrl: './image-carousel-item.css',
+  styleUrl: './image-carousel-item.scss',
 })
 export class ImageCarouselItem {
   @Input({ required: true }) categoryItem!: CategoryItem;

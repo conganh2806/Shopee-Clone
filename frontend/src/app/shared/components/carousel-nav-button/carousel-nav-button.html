@@ -4,6 +4,7 @@
   [disabled]="disabled"
   (click)="onClick()"
   [attr.aria-label]="direction === 'right' ? 'Next' : 'Previous'"
+  [style.visibility]="visible ? 'visible' : 'hidden'"
 >
   <fa-icon [icon]="arrowIcon"></fa-icon>
 </button>

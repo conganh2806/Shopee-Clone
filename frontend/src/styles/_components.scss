@@ -1,0 +1,73 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ==========================================================================
+// Button Mixins (Dùng để tái sử dụng)
+// ==========================================================================
+
+// Mixin cho style CƠ BẢN của button
+@mixin btn-base-styles {
+  @include flex-center(column, center, center);
+  @include text-truncate(1);
+
+  border: 0;
+  border-radius: $border-radius;
+  box-shadow: 0 1px 1px 0 rgba($palette-neutral-black, 0.09);
+  cursor: pointer;
+  font-size: $font-size-sm;
+  outline: 0;
+  text-transform: capitalize;
+}
+
+// Mixin cho style MÀU SẮC
+@mixin btn-style-primary {
+  background-color: $color-primary;
+  color: $color-text-white;
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+}
+
+@mixin btn-style-secondary {
+  background-color: $color-secondary;
+  color: $palette-neutral-gray-dark;
+  &:hover {
+    background-color: $color-secondary-hover;
+  }
+}
+
+@mixin btn-style-solid-primary {
+  background: $palette-shopee-orange-dark;
+  color: $color-text-white;
+}
+
+// ==========================================================================
+// Button Class (Dùng cho toàn cục)
+// ==========================================================================
+.btn {
+  @include btn-base-styles; // Áp dụng style cơ bản
+
+  &--inline {
+    display: inline-flex;
+  }
+
+  &--s {
+    height: 34px;
+    max-width: 190px;
+    min-width: 60px;
+    padding: 0 15px;
+  }
+
+  // Áp dụng các style màu sắc
+  &.primary {
+    @include btn-style-primary;
+  }
+
+  &.secondary {
+    @include btn-style-secondary;
+  }
+
+  &.btn-solid-primary {
+    @include btn-style-solid-primary;
+  }
+}

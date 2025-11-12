@@ -41,7 +41,7 @@ export function passwordsMatchValidator(control: AbstractControl): ValidationErr
   selector: 'app-register',
   imports: [ReactiveFormsModule, CommonModule, TextInput],
   templateUrl: './register.html',
-  styleUrl: './register.css',
+  styleUrl: './register.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterComponent implements OnDestroy {

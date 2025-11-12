@@ -1,0 +1,327 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* Header */
+.header {
+  background: linear-gradient(-180deg, $palette-shopee-red-dark, $palette-shopee-orange);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &--sticky {
+    @include fixed-top;
+
+    .header__navbar-wrapper.container-wrapper {
+      min-width: 100%;
+    }
+
+    .navbar.container {
+      max-width: $container-max-width;
+      width: inherit;
+    }
+
+    .header-with-search-wrapper {
+      min-width: inherit;
+    }
+
+    .header-with-search.container {
+      max-width: $container-max-width;
+      width: inherit;
+    }
+  }
+}
+
+.container-wrapper {
+  min-width: inherit;
+}
+
+/* Navbar */
+.header__navbar-wrapper {
+  background: transparent;
+  height: $header-height;
+  position: relative;
+  z-index: $z-index-popover;
+}
+
+.navbar {
+  @include flex-center($justify: initial);
+  color: $color-text-white;
+
+  &__drawer {
+    display: flex;
+    outline: 0;
+    overflow: visible;
+    position: relative;
+  }
+
+  &__left {
+    @include flex-center($justify: initial);
+  }
+
+  &__left-link {
+    position: relative;
+    @include flex-center($justify: initial);
+    color: $color-text-white;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-light;
+    text-transform: capitalize;
+    padding: 0.25rem;
+
+    &:not(:first-child) {
+      margin-left: 0.625rem;
+
+      &::after {
+        border-left: 1px solid $color-border-white;
+        border-right: 1px solid $color-border-white;
+        content: '';
+        height: 0.9375rem;
+        left: -6px;
+        position: absolute;
+        top: calc(50% - 7px);
+        width: 0;
+      }
+    }
+
+    &--no-border::after {
+      display: none;
+    }
+  }
+
+  &__left-link-text {
+    color: $color-text-white;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-light;
+    outline: 0;
+    overflow: visible;
+    padding: 0.25rem;
+    position: relative;
+    text-decoration: none;
+
+    &::after {
+      border: 0;
+    }
+  }
+
+  &__links {
+    height: $header-height;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include flex-center($justify: initial);
+  }
+
+  &__link {
+    position: relative;
+    @include flex-center($justify: initial);
+    color: $color-text-white;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-light;
+    text-transform: capitalize;
+
+    &--tappable {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    &--signup {
+      padding: 0 0.625rem;
+      margin: 0;
+    }
+
+    &--help {
+      padding-left: 0;
+    }
+  }
+
+  &__right-link-text {
+    @include flex-center($justify: initial);
+    color: currentColor;
+    padding: 6px;
+  }
+
+  &__link-text {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-light;
+    margin-left: 0.3125rem;
+    text-transform: capitalize;
+
+    &--normal-case {
+      text-transform: none;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__spacer {
+    flex: 1;
+  }
+
+  &__help-center-icon {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+
+  &__language {
+    @include flex-center($justify: initial);
+    color: $color-text-white;
+    padding: 0.4375rem 0.625rem;
+  }
+
+  &__link-separator {
+    border-right: 1px solid hsla(0, 0%, 100%, 0.4);
+    height: $font-size-xs;
+  }
+}
+
+.stardust-popover {
+  position: relative;
+}
+
+/* Header with search */
+.header-with-search-wrapper {
+  background: transparent;
+  box-shadow: 0 1px 1px 0 $color-border-light;
+  box-sizing: border-box;
+}
+
+.header-with-search {
+  display: flex;
+  height: $header-search-height;
+  justify-content: space-between;
+  padding: 1rem 0 0.625rem;
+
+  &__logo-section {
+    padding-right: 2.5rem;
+    position: relative;
+    top: -0.1875rem;
+    box-sizing: border-box;
+  }
+
+  &__logo-wrapper {
+    border-radius: $border-radius;
+    margin: -2px;
+    padding: 2px;
+  }
+
+  &__shopee-logo {
+    height: 50px;
+    width: 162px;
+    display: block;
+    fill: $color-text-white;
+  }
+
+  &__search-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    width: 840px;
+
+    > .shopee-searchbar {
+      box-shadow: 0 0.125rem 0.25rem rgba($palette-neutral-black, 0.09);
+      width: 100%;
+    }
+  }
+
+  &__cart-wrapper {
+    @include flex-center;
+    flex: 1;
+    margin: 0 10px;
+    padding-bottom: 5px;
+  }
+}
+
+.shopee-searchbar {
+  --focus-indicator-spacing: 3px;
+  align-items: stretch;
+  background: $palette-neutral-white;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  display: flex;
+  height: 2.5rem;
+  justify-content: space-between;
+  padding: 0.1875rem;
+
+  &__main {
+    display: flex;
+    flex: 1;
+  }
+
+  // Nút search sẽ tự động nhận style từ .btn.btn-solid-primary
+  &__search-icon {
+    color: $color-text-white;
+  }
+}
+
+.shopee-searchbar-input {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  padding: 0 0.625rem;
+  position: relative;
+  background-color: $palette-neutral-white;
+  border-color: $palette-neutral-white;
+
+  &__input {
+    @include flex-center(row, flex-start, center);
+    border: 0;
+    flex: 1;
+    margin: 0;
+    outline: none;
+    padding: 0;
+
+    &::-webkit-input-placeholder {
+      font-size: $font-size-sm;
+      color: $palette-neutral-gray-lighter;
+    }
+  }
+}
+
+/* Hot search keywords section */
+.hot-search-keywords {
+  flex: 1;
+  display: flex;
+  width: 100%;
+
+  &__main {
+    flex-wrap: wrap;
+    font-size: $font-size-xxs;
+    font-weight: $font-weight-light;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin-top: 0.1875rem;
+    overflow-y: clip;
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  &__main-text {
+    color: $color-text-white-faded;
+    display: block;
+    height: 0.875rem;
+    line-height: 0.875rem;
+    margin-bottom: 0.3125rem;
+    margin-left: 13px;
+    margin-top: 0.3125rem;
+    outline: 0;
+    overflow: visible;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+/* Cart section */
+.cart-drawer-container {
+  padding: 10px 0;
+}
+
+.cart-drawer {
+  @include flex-center($justify: initial);
+}

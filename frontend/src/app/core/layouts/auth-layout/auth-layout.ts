@@ -7,6 +7,6 @@ import { Header } from '@app/core/layouts/auth-layout/header/header';
   standalone: true,
   imports: [RouterModule, Header],
   templateUrl: './auth-layout.html',
-  styleUrl: './auth-layout.css',
+  styleUrl: './auth-layout.scss',
 })
 export class AuthLayoutComponent {}

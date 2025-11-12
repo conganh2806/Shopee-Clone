@@ -6,6 +6,6 @@ import { ImageCarousel } from '@features/homepage/category-list/category-list-se
   standalone: true,
   imports: [ImageCarousel],
   templateUrl: './category-list-section.html',
-  styleUrl: './category-list-section.css',
+  styleUrl: './category-list-section.scss',
 })
 export class CategoryListSection {}

@@ -1,7 +1,9 @@
 @for(banner of banners; track banner) {
-<a [href]="banner.link" class="banner-image__link object-cover last:mt-1!">
-  <div class="w-full h-full">
-    <img class="w-full object-contain" [src]="banner.imgSrc" [alt]="banner.alt" />
-  </div>
-</a>
+<div class="mini-carousel__wrapper">
+  <a [href]="banner.link" class="mini-carousel__image-link">
+    <div>
+      <img [src]="banner.imgSrc" [alt]="banner.alt" />
+    </div>
+  </a>
+</div>
 }

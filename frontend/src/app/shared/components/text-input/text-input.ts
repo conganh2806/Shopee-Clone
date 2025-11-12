@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-text-input',
   imports: [ReactiveFormsModule, CommonModule, FontAwesomeModule],
   templateUrl: './text-input.html',
-  styleUrl: './text-input.css',
+  styleUrl: './text-input.scss',
 })
 export class TextInput implements OnInit, OnDestroy {
   @Input() control!: FormControl;

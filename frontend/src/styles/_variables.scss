@@ -1,0 +1,103 @@
+// Colors
+$palette-shopee-red: #ee4d2d;
+$palette-shopee-red-dark: #f53d2d;
+$palette-shopee-orange: #f63;
+$palette-shopee-orange-dark: #fb5533;
+
+$palette-neutral-white: #fff;
+$palette-neutral-black: #000;
+$palette-neutral-dark: #222;
+$palette-neutral-gray-dark: #333;
+$palette-neutral-gray: #555;
+$palette-neutral-gray-light: #999;
+$palette-neutral-gray-lighter: #9c9c9c; // Placeholder
+$palette-neutral-gray-lightest: #f0f0f0; // Secondary btn
+$palette-neutral-bg: #f9f9f9; // Global bg, disabled bg
+
+$palette-semantic-error: #ff424f;
+$palette-semantic-success: #66cc00;
+$palette-semantic-success-dark: #28a745;
+
+// Contextual Variables (Biến ngữ cảnh)
+$color-primary: $palette-shopee-red;
+$color-primary-hover: #f05d40; // From dialog
+$color-secondary: $palette-neutral-gray-lightest;
+$color-secondary-hover: #e0e0e0; // From dialog
+
+$color-text: rgba($palette-neutral-black, 0.8);
+$color-text-light: rgba($palette-neutral-black, 0.54);
+$color-text-faded: rgba($palette-neutral-black, 0.26);
+$color-text-white: $palette-neutral-white;
+$color-text-white-faded: hsla(0, 0%, 100%, 0.9);
+$color-text-link: $palette-shopee-red;
+
+$color-border: rgba($palette-neutral-black, 0.14);
+$color-border-light: rgba($palette-neutral-black, 0.05);
+$color-border-white: hsla(0, 0%, 100%, 0.22);
+$color-border-medium: rgba($palette-neutral-black, 0.1);
+$color-bg-white-medium: rgb($palette-neutral-black, 0.1);
+$color-bg-white-translucent: rgba($palette-neutral-white, 0.9);
+
+$color-backdrop: rgba($palette-neutral-black, 0.5);
+$color-disabled-bg: $palette-neutral-bg;
+$color-disabled-text: $palette-neutral-gray-light;
+
+// 2. Typography
+// --------------------------------------------------------------------------
+$font-family-base: Helvetica Neue, Helvetica, Arial, 'Văn Toàn', 'WenQuanYi Zen Hei',
+  'Hiragino Sans GB', '儷黑 Pro', LiHei Pro, Heiti TC, '微軟正黑體', 'Microsoft JhengHei UI',
+  'Microsoft JhengHei', SHPBurmese, sans-serif;
+
+$font-size-base: 1rem; // 16px
+$font-size-sm: 0.875rem; // 14px
+$font-size-xs: 0.8125rem; // 13px
+$font-size-xxs: 0.75rem; // 12px
+$font-size-lg: 1.25rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+$line-height-base: 1.2;
+
+// 3. Layout & Sizing
+// --------------------------------------------------------------------------
+$container-max-width: 1200px;
+$carousel-nav-btn-size: 25px;
+
+$header-height: 2.125rem;
+$header-search-height: 5.3125rem;
+$header-total-margin: 7.4375rem;
+
+$border-radius: 2px;
+$border-radius-lg: 4px;
+$border-radius-xl: 8px;
+
+// 4. Z-Index
+// --------------------------------------------------------------------------
+$z-index-base: 1;
+$z-index-over-content: 10;
+$z-index-sticky: 100;
+$z-index-popover: 400;
+$z-index-dialog: 1000;
+
+// 5. Spacing
+// --------------------------------------------------------------------------
+$spacing-xs: 0.3125rem; //5px
+$spacing-sm: 0.9375rem; //15px
+$spacing-base: 1rem; // 16px
+$spacing-md: 1.25rem; // 20px
+$spacing-lg: 1.875rem; // 30px
+$spacing-xl: 4.375rem; // 70px (for .home-page margin-bottom)
+
+// 6. Opacity
+// --------------------------------------------------------------------------
+$opacity-disabled: 0.5;
+
+// 7. Transitions & Animations
+// --------------------------------------------------------------------------
+$scale-interaction-pop: 1.4;
+$transition-duration-default: 0.2s;
+$transition-timing-default: ease;

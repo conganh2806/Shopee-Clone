@@ -7,7 +7,7 @@ import { filter, map, startWith, Subscription, switchMap, tap } from 'rxjs';
   selector: 'app-header',
   imports: [CommonModule],
   templateUrl: './header.html',
-  styleUrl: './header.css',
+  styleUrl: './header.scss',
 })
 export class Header implements OnInit, OnDestroy {
   private router = inject(Router);

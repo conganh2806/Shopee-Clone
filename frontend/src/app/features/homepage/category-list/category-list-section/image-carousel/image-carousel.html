@@ -1,6 +1,10 @@
 <div class="image-carousel__item-list-wrapper">
-  <ul class="image-carousel__item-list" [style.transform]="carouselTransform()">
-    @for(item of categoryItems(); track item.src) {
+  <ul
+    class="image-carousel__item-list"
+    [style.transform]="carouselTransform()"
+    [style.width.%]="totalWidthPercentage()"
+  >
+    @for(item of categoryItems(); track $index) {
     <li class="image-carousel__item">
       <image-carousel-item [categoryItem]="item"></image-carousel-item>
     </li>
@@ -8,11 +12,20 @@
     <li style="width: 100%; text-align: center">Không có danh mục nào.</li>
     }
   </ul>
-  @if (canGoPrev()) {
-  <app-carousel-nav-button class="prev-button" direction="left" (navigate)="goToPrevPage()">
-  </app-carousel-nav-button>
-  } @if (canGoNext()) {
-  <app-carousel-nav-button class="next-button" direction="right" (navigate)="goToNextPage()">
-  </app-carousel-nav-button>
-  }
 </div>
+<app-carousel-nav-button
+  class="prev-button"
+  direction="left"
+  [disabled]="canGoNext()"
+  (navigate)="goToPrevPage()"
+  [visible]="canGoPrev()"
+>
+</app-carousel-nav-button>
+<app-carousel-nav-button
+  class="next-button"
+  direction="right"
+  [disabled]="canGoPrev()"
+  (navigate)="goToNextPage()"
+  [visible]="canGoNext()"
+>
+</app-carousel-nav-button>

@@ -7,6 +7,6 @@ import { DialogComponent } from '@app/shared/components/dialog/dialog';
   standalone: true,
   imports: [RouterModule, DialogComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css',
+  styleUrl: './app.scss',
 })
 export class AppComponent {}

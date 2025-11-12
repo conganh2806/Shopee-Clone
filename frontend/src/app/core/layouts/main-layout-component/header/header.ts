@@ -16,7 +16,7 @@ import { AuthStore } from '@app/core/auth/auth-store';
   standalone: true,
   imports: [FontAwesomeModule, CommonModule],
   templateUrl: './header.html',
-  styleUrl: './header.css',
+  styleUrl: './header.scss',
 })
 export class HeaderComponent {
   private authService = inject(AuthStore);

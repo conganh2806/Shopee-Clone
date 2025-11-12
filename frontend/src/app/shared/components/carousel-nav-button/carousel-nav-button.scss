@@ -1,0 +1,31 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+}
+
+.carousel-nav-button {
+  width: $carousel-nav-btn-size;
+  height: $carousel-nav-btn-size;
+
+  border-radius: 50%;
+  border: 1px solid $color-border-medium;
+  background-color: $color-bg-white-translucent;
+  color: $palette-neutral-gray;
+
+  @include flex-center;
+
+  cursor: pointer;
+  box-shadow: 0 1px 5px $color-border-medium;
+}
+
+.carousel-nav-button:hover:not(:disabled) {
+  background-color: $palette-neutral-white;
+  color: $palette-neutral-gray-dark;
+}
+
+.carousel-nav-button:disabled {
+  cursor: not-allowed;
+  opacity: $opacity-disabled;
+}
