@@ -15,12 +15,14 @@ import { ButtonDirection } from '@app/core/models/button-direction.type';
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
   templateUrl: './carousel-nav-button.html',
-  styleUrl: './carousel-nav-button.css',
+  styleUrl: './carousel-nav-button.scss',
 })
 export class CarouselNavButton {
   @Input() direction: ButtonDirection = 'right';
 
   @Input() disabled: boolean = false;
+
+  @Input() visible: boolean = true;
 
   @Output() navigate = new EventEmitter<void>();
 

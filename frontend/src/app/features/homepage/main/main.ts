@@ -6,6 +6,6 @@ import { CategoryList } from '@features/homepage/category-list/category-list';
   standalone: true,
   imports: [CategoryList],
   templateUrl: './main.html',
-  styleUrl: './main.css',
+  styleUrl: './main.scss',
 })
 export class MainComponent {}

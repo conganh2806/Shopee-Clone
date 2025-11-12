@@ -1,23 +1,18 @@
-<div class="stardust-carousel">
-  <div class="stardust-carousel__item-list-wrapper" style="padding-top: 29.5003%">
+<div class="stardust-carousel" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()">
+  <div class="stardust-carousel__item-list-wrapper">
     <ul
       class="stardust-carousel__item-list"
       [ngStyle]="{
         width: totalWidth() + '%',
-        transition: 'transform 0.5s ease',
-        transform: transformStyle()
+        transform: transformStyle(),
+        transition: 'all 0.5s ease-out'
       }"
     >
       @for (item of images(); track item.src) {
       <li class="stardust-carousel__item" [style.width.%]="itemWidth()">
         <div class="stardust-carousel__item-inner-wrapper">
-          <a class="stardust-carousel__item-inner-wrapper-image-wrapper relative" href="#">
-            <img
-              class="pt-0 align-bottom object-bottom h-full w-full bg-bottom absolute"
-              style="object-fit: cover"
-              [src]="item.src"
-              [alt]="item.alt"
-            />
+          <a class="stardust-carousel__item-inner-wrapper-image-wrapper" href="#">
+            <img [src]="item.src" [alt]="item.alt" />
           </a>
         </div>
       </li>
@@ -25,5 +20,14 @@
       <li style="padding: 20px; text-align: center; width: 100%">Không có ảnh nào để hiển thị.</li>
       }
     </ul>
+  </div>
+  <div class="stardust-carousel__dots">
+    @for(image of images(); track $index) {
+    <div
+      class="stardust-carousel__dot"
+      [class.stardust-carousel__dot--active]="currentIndex() === $index"
+      (click)="goToSlide($index)"
+    ></div>
+    }
   </div>
 </div>

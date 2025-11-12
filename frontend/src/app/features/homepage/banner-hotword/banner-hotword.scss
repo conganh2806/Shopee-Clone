@@ -1,0 +1,11 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.section-banner-hotword--no-skin {
+  background-color: $palette-neutral-white;
+  border-radius: $border-radius;
+  box-shadow: 0 1px 1px 0 $color-border-light;
+  margin-top: 0;
+  overflow: visible;
+  padding-top: $spacing-lg;
+}

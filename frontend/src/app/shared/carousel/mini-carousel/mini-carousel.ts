@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './mini-carousel.html',
-  styleUrl: './mini-carousel.css',
+  styleUrl: './mini-carousel.scss',
 })
 export class MiniCarousel {
   banners = [

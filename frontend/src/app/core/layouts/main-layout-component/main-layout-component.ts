@@ -7,6 +7,6 @@ import { HeaderComponent } from '@app/core/layouts/main-layout-component/header/
   standalone: true,
   imports: [RouterOutlet, HeaderComponent],
   templateUrl: './main-layout-component.html',
-  styleUrl: './main-layout-component.css',
+  styleUrl: './main-layout-component.scss',
 })
 export class MainLayoutComponent {}

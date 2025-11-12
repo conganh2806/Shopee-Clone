@@ -1,0 +1,47 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'sass:math';
+
+.image-carousel-item__category-grid {
+  background-color: $palette-neutral-white;
+  border-bottom: 1px solid $color-border-light;
+  border-right: 1px solid $color-border-light;
+  color: $color-text;
+
+  @include aspect-ratio(math.div(100, 126));
+
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.6, 1),
+    box-shadow 0.1s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.image-carousel-item__category-grid-wrapper {
+  @include flex-center($direction: column);
+}
+
+.image-carousel__wrapper {
+  flex-shrink: 1;
+  height: 70%;
+  margin-top: 10%;
+  width: 70%;
+}
+
+.image-carousel {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.text-carousel__wrapper {
+  color: $color-text;
+  font-size: $font-size-sm;
+
+  @include text-truncate(2);
+
+  height: 2.5rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.625rem;
+  text-decoration: none;
+}

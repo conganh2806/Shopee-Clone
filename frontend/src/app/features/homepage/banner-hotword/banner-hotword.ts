@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarouselWrapper } from '@app/shared/carousel/carousel-wrapper/carousel-wrapper';
-import { Hotword } from './hotword/hotword';
+import { CarouselSection } from '@app/features/homepage/banner-hotword/carousel-section/carousel-section';
+import { Hotword } from '@app/features/homepage/banner-hotword/hotword/hotword';
 
 @Component({
   selector: 'app-banner-hotword',
   standalone: true,
-  imports: [CarouselWrapper, CommonModule, Hotword],
+  imports: [CarouselSection, CommonModule, Hotword],
   templateUrl: './banner-hotword.html',
-  styleUrl: './banner-hotword.css',
+  styleUrl: './banner-hotword.scss',
 })
 export class BannerHotword {}

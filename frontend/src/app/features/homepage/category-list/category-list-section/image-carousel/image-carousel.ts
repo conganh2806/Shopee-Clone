@@ -1,4 +1,4 @@
-import { Component, signal, computed, WritableSignal, effect, inject } from '@angular/core';
+import { Component, signal, computed, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImageCarouselItem } from '@features/homepage/category-list/category-list-section/image-carousel-item/image-carousel-item';
 import { CarouselNavButton } from '@app/shared/components/carousel-nav-button/carousel-nav-button';
@@ -10,7 +10,7 @@ import { CategoryItemData } from '@app/core/data/category.data';
   standalone: true,
   imports: [CommonModule, ImageCarouselItem, CarouselNavButton],
   templateUrl: './image-carousel.html',
-  styleUrl: './image-carousel.css',
+  styleUrl: './image-carousel.scss',
 })
 export class ImageCarousel {
   private readonly ITEMS_PER_COLUMN = 2;
@@ -18,10 +18,7 @@ export class ImageCarousel {
 
   private categoryService = inject(CategoryItemData);
 
-  categoryItems = toSignal(
-    this.categoryService.getCategoryItems(), // <--- Gọi service
-    { initialValue: [] } // Cung cấp giá trị ban đầu (rất quan trọng)
-  );
+  categoryItems = toSignal(this.categoryService.getCategoryItems(), { initialValue: [] });
 
   constructor() {
     effect(() => {
@@ -51,21 +48,28 @@ export class ImageCarousel {
   });
 
   maxTransformPercentage = computed(() => {
-    return Math.min(0, 100 - this.totalWidthPercentage());
+    const totalCols = this.totalColumns();
+    if (totalCols <= this.VISIBLE_COLUMNS) {
+      return 0;
+    }
+
+    const overflowCols = totalCols - this.VISIBLE_COLUMNS;
+    return (overflowCols / totalCols) * -100;
   });
 
   carouselTransform = computed(() => {
     const index = this.currentPageIndex();
     const totalPages = this.totalPages();
     const maxTransformPercentage = this.maxTransformPercentage();
+    const totalCols = this.totalColumns();
 
     if (index === totalPages - 1) {
       return `translateX(${maxTransformPercentage}%)`;
     }
 
-    const transformValue = index * -100;
+    const transformValue = ((index * this.VISIBLE_COLUMNS) / totalCols) * -100;
 
-    return `translateX(${transformValue}%)`;
+    return `translateX(${Math.max(transformValue, maxTransformPercentage)}%)`;
   });
 
   canGoNext = computed(() => this.currentPageIndex() < this.totalPages() - 1);

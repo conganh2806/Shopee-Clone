@@ -1,0 +1,13 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.homepage-carousel-banner {
+  display: flex;
+  justify-content: center;
+  min-width: $container-max-width;
+}
+
+.carousel-container {
+  display: flex;
+  width: $container-max-width;
+}

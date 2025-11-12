@@ -1,0 +1,7 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  @include flex-col;
+  margin-bottom: $spacing-xl;
+}

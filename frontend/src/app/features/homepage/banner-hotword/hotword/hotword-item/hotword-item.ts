@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './hotword-item.html',
-  styleUrl: './hotword-item.css',
+  styleUrl: './hotword-item.scss',
 })
 export class HotwordItem {
   @Input() url: string = '';

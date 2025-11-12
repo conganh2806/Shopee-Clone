@@ -14,7 +14,7 @@ import { BaseResponse } from '@app/core/models/response.model';
   selector: 'app-login',
   imports: [TextInput, ReactiveFormsModule, CommonModule],
   templateUrl: './login.html',
-  styleUrl: './login.css',
+  styleUrl: './login.scss',
 })
 export class LoginComponent {
   private formBuilder = inject(FormBuilder);

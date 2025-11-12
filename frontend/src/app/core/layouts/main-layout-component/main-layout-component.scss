@@ -1,12 +1,14 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   min-height: 100vh;
   position: relative;
 }
 
 .home-wrapper.home-wrapper-transition {
-  margin-top: 7.4375rem;
+  margin-top: $header-total-margin;
 }
 
 .home-wrapper-transition {

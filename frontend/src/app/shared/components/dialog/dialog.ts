@@ -6,7 +6,7 @@ import { DialogService } from '@shared/components/dialog/dialog.service';
   selector: 'app-dialog',
   imports: [CommonModule],
   templateUrl: './dialog.html',
-  styleUrl: './dialog.css',
+  styleUrl: './dialog.scss',
 })
 export class DialogComponent {
   dialogService = inject(DialogService);

@@ -3,10 +3,9 @@ import { HeroCarousel } from '@app/shared/carousel/hero-carousel/hero-carousel';
 import { MiniCarousel } from '@app/shared/carousel/mini-carousel/mini-carousel';
 
 @Component({
-  selector: 'app-carousel-wrapper',
-  standalone: true,
+  selector: 'app-carousel-section',
   imports: [HeroCarousel, MiniCarousel],
-  templateUrl: './carousel-wrapper.html',
-  styleUrl: './carousel-wrapper.css',
+  templateUrl: './carousel-section.html',
+  styleUrl: './carousel-section.scss',
 })
-export class CarouselWrapper {}
+export class CarouselSection {}

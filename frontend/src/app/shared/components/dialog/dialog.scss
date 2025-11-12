@@ -1,0 +1,46 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'components' as *;
+
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: $color-backdrop;
+  @include flex-center;
+  z-index: $z-index-dialog;
+}
+
+.dialog-content {
+  background: $palette-neutral-white;
+  border-radius: $border-radius-xl;
+  box-shadow: 0 4px 12px rgba($palette-neutral-black, 0.15);
+  padding: 24px;
+  min-width: 320px;
+  max-width: 450px;
+}
+
+.dialog-title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.dialog-message {
+  font-size: $font-size-base;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  button {
+    @include btn-base-styles;
+    padding: 10px 16px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+  }
+}

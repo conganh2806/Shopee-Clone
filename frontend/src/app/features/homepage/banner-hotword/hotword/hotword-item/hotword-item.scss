@@ -1,0 +1,45 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.hotword-item-link {
+  text-decoration: none;
+}
+
+.hotword-item-container {
+  width: 150px;
+}
+
+.quick-access-menu__item-wrapper {
+  margin: 18px auto 8px;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+.quick-access-menu__item {
+  position: relative;
+  border-radius: 50%;
+  height: 100%;
+}
+
+.quick-access-menu__item-image {
+  background-image: var(--bg-image);
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.quick-access-menu__item-text {
+  @include text-truncate(2);
+  font-size: $font-size-xs;
+  line-height: 0.875rem;
+  margin-bottom: 8px;
+  max-width: 150px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  color: $palette-neutral-dark;
+  letter-spacing: 0;
+  text-align: center;
+}

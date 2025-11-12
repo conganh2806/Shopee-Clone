@@ -7,7 +7,7 @@ import { CarouselImage } from '@app/core/models/carousel-image.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './hero-carousel.html',
-  styleUrl: './hero-carousel.css',
+  styleUrl: './hero-carousel.scss',
 })
 export class HeroCarousel implements OnInit, OnDestroy {
   images: WritableSignal<CarouselImage[]> = signal([
@@ -32,7 +32,7 @@ export class HeroCarousel implements OnInit, OnDestroy {
 
   transformStyle = computed(() => {
     const percentage = this.itemWidth() * this.currentIndex();
-    return `translateX(-${percentage}%)`;
+    return `translateX(-${percentage}%) translateX(0px)`;
   });
 
   nextSlide() {
@@ -69,5 +69,13 @@ export class HeroCarousel implements OnInit, OnDestroy {
     if (this.autoPlayInterval) {
       clearInterval(this.autoPlayInterval);
     }
+  }
+
+  onMouseOver() {
+    this.stopAutoPlay();
+  }
+
+  onMouseLeave() {
+    this.startAutoPlay();
   }
 }
