@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Backend.Application.Features.Auth;
+using ShopeeClone.Backend.Application.Commands.Auth;
+using ShopeeClone.Backend.Application.DTOs;
 
 namespace ShopeeClone.Backend.Api.Controllers
 {
@@ -8,50 +9,18 @@ namespace ShopeeClone.Backend.Api.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly ISender _sender;
+        private readonly IMediator _mediator;
 
-        public AuthController(ISender sender)
+        public AuthController(IMediator mediator)
         {
-            _sender = sender;
+            _mediator = mediator;
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterRequest request)
+        [HttpPost("Login")]
+        [ProducesDefaultResponseType(typeof(AuthResponseDTO))]
+        public async Task<IActionResult> Login([FromBody] AuthCommand command)
         {
-            try
-            {
-                var command = new RegisterCommand(
-                    request.Phone,
-                    request.Password,
-                    request.ConfirmPassword
-                );
-
-                var result = await _sender.Send(command);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { error = ex.Message });
-            }
-        }
-
-        [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginRequest request)
-        {
-            try
-            {
-                var query = new LoginQuery(request.Phone, request.Password);
-                var result = await _sender.Send(query);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { error = ex.Message });
-            }
+            return Ok(await _mediator.Send(command));
         }
     }
-
-    public record RegisterRequest(string Phone, string Password, string ConfirmPassword);
-
-    public record LoginRequest(string Phone, string Password);
 }
